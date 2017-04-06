@@ -6,14 +6,18 @@
 //  Copyright (c) 2014 codoon.com. All rights reserved.
 //
 
-#import "UIControl+Blocks.h"
+#import "UIControl+CDBlockExtension.h"
+
 #import <objc/runtime.h>
 
 @interface CDUIControlTarget : NSObject
-@property (nonatomic, copy) UIControlBlock block;
-+ (id)targetWithAction:(UIControlBlock)aBlock;
-- (id)initWithAction:(UIControlBlock)aBlock;
+
+@property (nonatomic, copy) void (^block) (UIControl *control);
+
++ (id)targetWithAction:(void (^)(UIControl *control))aBlock;
+- (id)initWithAction:(void (^)(UIControl *control))aBlock;
 - (void)eventReceiver:(id)sender;
+
 @end
 
 @implementation CDUIControlTarget
