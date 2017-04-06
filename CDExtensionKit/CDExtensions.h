@@ -16,4 +16,8 @@
 
 #import "UIView+CDLayoutExtension.h"
 
+#import "UIColor+CDExtension.h"
+
+#import "UIControl+CDBlockExtension.h"
+
 #endif /* CDExtensions_h */
