@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Alpha)
+@interface UIColor (CDExtension)
 
 - (UIColor *)colorByApplyingAlpha:(CGFloat)alpha;
 

@@ -8,7 +8,7 @@
 
 #import "UIColor+CDExtension.h"
 
-@implementation UIColor (Alpha)
+@implementation UIColor (CDExtension)
 
 - (UIColor *)colorByApplyingAlpha:(CGFloat)alpha {
     CGColorRef oldColor = CGColorCreateCopyWithAlpha([self CGColor], alpha);
