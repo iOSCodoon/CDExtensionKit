@@ -89,22 +89,16 @@
 @end
 
 
-CGFloat horizontalAdaptedSize(CGFloat size320, CGFloat size375)
-{
-    CGFloat minimumSize = size320; // 320
-    CGFloat maximumSize = size375; // 375
-    CGFloat size = ([UIScreen mainScreen].bounds.size.width - 320.0)/(375.0 - 320.0)*(maximumSize - minimumSize) + minimumSize;
-    size = fmax(size, minimumSize);
-    size = fmin(size, maximumSize);
+CGFloat horizontalAdaptedSize(CGFloat size375, CGFloat size414) {
+    CGFloat minimumSize = size375; // 375
+    CGFloat maximumSize = size414; // 414
+    CGFloat size = ([UIScreen mainScreen].bounds.size.width - 375.0)/(414.0 - 375.0)*(maximumSize - minimumSize) + minimumSize;
     return size;
 }
 
-CGFloat verticalAdaptedSize(CGFloat size480, CGFloat size667)
-{
+CGFloat verticalAdaptedSize(CGFloat size667, CGFloat size896) {
     CGFloat minimumSize = size480; // 480
     CGFloat maximumSize = size667; // 667
-    CGFloat size = ([UIScreen mainScreen].bounds.size.height - 480.0)/(667.0 - 480.0)*(maximumSize - minimumSize) + minimumSize;
-    size = fmax(size, minimumSize);
-    size = fmin(size, maximumSize);
+    CGFloat size = ([UIScreen mainScreen].bounds.size.height - 667.0)/(896.0 - 667.0)*(maximumSize - minimumSize) + minimumSize;
     return size;
 }
