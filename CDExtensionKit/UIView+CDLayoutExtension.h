@@ -23,5 +23,5 @@
 
 @end
 
-extern CGFloat horizontalAdaptedSize(CGFloat size320, CGFloat size375);
-extern CGFloat verticalAdaptedSize(CGFloat size480, CGFloat size667);
+extern CGFloat horizontalAdaptedSize(CGFloat size375, CGFloat size414);
+extern CGFloat verticalAdaptedSize(CGFloat size667, CGFloat size896);
