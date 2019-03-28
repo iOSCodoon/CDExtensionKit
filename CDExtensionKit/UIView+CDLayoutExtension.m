@@ -97,8 +97,8 @@ CGFloat horizontalAdaptedSize(CGFloat size375, CGFloat size414) {
 }
 
 CGFloat verticalAdaptedSize(CGFloat size667, CGFloat size896) {
-    CGFloat minimumSize = size480; // 480
-    CGFloat maximumSize = size667; // 667
+    CGFloat minimumSize = size667; // 667
+    CGFloat maximumSize = size896; // 896
     CGFloat size = ([UIScreen mainScreen].bounds.size.height - 667.0)/(896.0 - 667.0)*(maximumSize - minimumSize) + minimumSize;
     return size;
 }
