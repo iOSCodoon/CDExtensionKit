@@ -90,15 +90,19 @@
 
 
 CGFloat horizontalAdaptedSize(CGFloat size375, CGFloat size414) {
+    CGFloat width = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height;
+
     CGFloat minimumSize = size375; // 375
     CGFloat maximumSize = size414; // 414
-    CGFloat size = ([UIScreen mainScreen].bounds.size.width - 375.0)/(414.0 - 375.0)*(maximumSize - minimumSize) + minimumSize;
+    CGFloat size = (width - 375.0)/(414.0 - 375.0)*(maximumSize - minimumSize) + minimumSize;
     return size;
 }
 
 CGFloat verticalAdaptedSize(CGFloat size667, CGFloat size896) {
+    CGFloat height = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width;
+
     CGFloat minimumSize = size667; // 667
     CGFloat maximumSize = size896; // 896
-    CGFloat size = ([UIScreen mainScreen].bounds.size.height - 667.0)/(896.0 - 667.0)*(maximumSize - minimumSize) + minimumSize;
+    CGFloat size = (height - 667.0)/(896.0 - 667.0)*(maximumSize - minimumSize) + minimumSize;
     return size;
 }
